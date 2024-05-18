@@ -15,6 +15,9 @@ public class Daycare {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "bin")
+    private String bin;
+
     @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
@@ -22,6 +25,6 @@ public class Daycare {
     @Column(name = "capacity")
     private int capacity;
 
-    @Column(name = "status")
-    private boolean isAvailable;
+    @Column(name = "emptyPlaces")
+    private int emptyPlaces;
 }

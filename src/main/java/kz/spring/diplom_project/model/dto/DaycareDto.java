@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 public class DaycareDto {
     private Long id;
     private String name;
+    private String bin;
     private Long addressId;
     private int capacity;
-    private boolean isAvailable;
+    private int emptyPlace;
 }
