@@ -13,5 +13,5 @@ public class DaycareDto {
     private String bin;
     private Long addressId;
     private int capacity;
-    private int emptyPlace;
+    private int emptyPlaces;
 }

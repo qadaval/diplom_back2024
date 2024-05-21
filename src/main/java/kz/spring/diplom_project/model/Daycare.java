@@ -25,6 +25,6 @@ public class Daycare {
     @Column(name = "capacity")
     private int capacity;
 
-    @Column(name = "emptyPlaces")
+    @Column(name = "empty_places")
     private int emptyPlaces;
 }
