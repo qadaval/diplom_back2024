@@ -1,8 +1,9 @@
 package kz.spring.diplom_project.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -23,20 +24,25 @@ public class Parent {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "iin")
+    @Column(name = "iin", unique = true)
     private String iin;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Country country;
+    private String password;
+
+    @Column(name = "date_of_birth")
+    private Date dateOfBirth;
+
+    @Column(name = "citizenship")
+    private String citizenship;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private City city;
 
-    @Column(name = "phone_number")
+    @Column(name = "phoneNumber")
     private String phoneNumber;
 
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
+    @Column(name = "gender")
+    private String gender;
 
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     private List<Child> children;

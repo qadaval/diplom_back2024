@@ -12,12 +12,12 @@ import kz.spring.diplom_project.model.dto.ParentDto;
 public interface ParentMapper {
 
     @Mapping(source = "children", target = "children")
-    @Mapping(source = "country.id", target = "countryId")
+//    @Mapping(source = "country.id", target = "countryId")
     @Mapping(source = "city.id", target = "cityId")
     ParentDto toDto(Parent parent);
 
     @Mapping(source = "children", target = "children")
-    @Mapping(source = "countryId", target = "country.id")
+//    @Mapping(source = "countryId", target = "country.id")
     @Mapping(source = "cityId", target = "city.id")
     Parent toModel(ParentDto parentDto);
 

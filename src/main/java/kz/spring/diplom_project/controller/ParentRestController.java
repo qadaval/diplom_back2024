@@ -55,4 +55,13 @@ public class ParentRestController {
         parentService.deleteParent(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/get/{iin}")
+    public ResponseEntity<ParentDto> findByUsername(
+            @PathVariable(name = "iin") String iin
+    ) {
+        Parent parent = parentService.findByIin(iin);
+        ParentDto parentDto = parentMapper.toDto(parent);
+        return new ResponseEntity<>(parentDto, HttpStatus.OK);
+    }
 }

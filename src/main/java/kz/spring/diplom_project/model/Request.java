@@ -1,6 +1,6 @@
 package kz.spring.diplom_project.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;

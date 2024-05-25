@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ParentRepo extends JpaRepository<Parent, Long> {
+    Parent findByIin(String iin);
 }
