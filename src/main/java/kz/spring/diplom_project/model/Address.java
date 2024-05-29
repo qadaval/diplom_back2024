@@ -12,8 +12,8 @@ public class Address {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "city")
-    private String city;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private City city;
 
     @Column(name = "region")
     private String region;
