@@ -31,10 +31,6 @@ public class Child {
     private LocalDate dateOfBirth;
 
     @ManyToOne
-    @JoinColumn(name = "address_id")
-    private Address address;
-
-    @ManyToOne
     @JoinColumn(name = "parent_id")
     @JsonIgnoreProperties("children")
     private Parent parent;

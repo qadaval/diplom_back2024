@@ -3,7 +3,7 @@ package kz.spring.diplom_project.model;
 import javax.persistence.*;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -30,7 +30,7 @@ public class Parent {
     private String password;
 
     @Column(name = "date_of_birth")
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @Column(name = "citizenship")
     private String citizenship;
@@ -44,7 +44,7 @@ public class Parent {
     @Column(name = "gender")
     private String gender;
 
-    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER)
     private List<Child> children;
 
 }

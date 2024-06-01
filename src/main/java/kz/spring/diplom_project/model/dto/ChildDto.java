@@ -16,6 +16,5 @@ public class ChildDto {
     private String surname;
     private String iin;
     private LocalDate dateOfBirth;
-    private Long addressId;
     private Long parentId;
 }

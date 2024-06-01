@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -20,7 +20,7 @@ public class ParentDto {
     private String iin;
     @NotEmpty(message = "Password cannot be empty")
     private String password;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private String citizenship;
     private Long cityId;
     private String gender;
