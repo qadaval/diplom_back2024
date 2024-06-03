@@ -14,9 +14,6 @@ public class Request {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "number")
-    private int number;
-
     @Column(name = "date_of_request")
     private LocalDate dateOfRequest;
 
@@ -28,6 +25,6 @@ public class Request {
     @JoinColumn(name = "child_id")
     private Child child;
 
-    @ManyToOne
-    private Queue queue;
+    @Column(name = "approved")
+    private boolean isApproved;
 }
