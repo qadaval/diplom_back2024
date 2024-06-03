@@ -25,6 +25,10 @@ public class Request {
     @JoinColumn(name = "child_id")
     private Child child;
 
+    @ManyToOne
+    @JoinColumn(name = "daycare_id")
+    private Daycare daycare;
+
     @Column(name = "approved")
     private boolean isApproved;
 }

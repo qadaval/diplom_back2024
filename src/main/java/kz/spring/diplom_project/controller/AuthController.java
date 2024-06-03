@@ -4,6 +4,7 @@ package kz.spring.diplom_project.controller;
 
 import kz.spring.diplom_project.model.City;
 import kz.spring.diplom_project.model.Parent;
+import kz.spring.diplom_project.model.Role;
 import kz.spring.diplom_project.model.dto.ParentDto;
 import kz.spring.diplom_project.request.AuthenticationRequest;
 import kz.spring.diplom_project.service.CityService;
@@ -17,6 +18,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Set;
 
 @RestController
 public class AuthController {
@@ -46,10 +49,12 @@ public class AuthController {
         }
 
         final UserDetails userDetails = parentService.loadUserByUsername(authenticationRequestDTO.getIin());
-        final String jwt = jwtUtil.generateToken(userDetails.getUsername());
+        final Set<Role> roles = parentService.findByIin(authenticationRequestDTO.getIin()).getRoles(); // Get roles of the user
+        final String jwt = jwtUtil.generateToken(userDetails.getUsername(), roles); // Pass roles to generateToken
 
         return ResponseEntity.ok(jwt);
     }
+
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(
@@ -72,7 +77,8 @@ public class AuthController {
         parentService.saveUser(parent);
 
         final UserDetails userDetails = parentService.loadUserByUsername(parentDto.getIin());
-        final String jwt = jwtUtil.generateToken(userDetails.getUsername());
+        final Set<Role> roles = parentService.findByIin(parentDto.getIin()).getRoles(); // Get roles of the user
+        final String jwt = jwtUtil.generateToken(userDetails.getUsername(), roles); // Pass roles to generateToken
 
         return ResponseEntity.ok(jwt);
     }

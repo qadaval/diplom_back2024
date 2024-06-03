@@ -11,11 +11,13 @@ import java.util.List;
 public interface RequestMapper {
     @Mapping(source = "parent.id", target = "parentId")
     @Mapping(source = "child.id", target = "childId")
+    @Mapping(source = "daycare.id", target = "daycareId")
     RequestDto toDto(Request request);
 
     List<RequestDto> toDtoList(List<Request> requestList);
 
     @Mapping(source = "parentId", target = "parent.id")
     @Mapping(source = "childId", target = "child.id")
+    @Mapping(source = "daycareId", target = "daycare.id")
     Request toModel(RequestDto requestDto);
 }

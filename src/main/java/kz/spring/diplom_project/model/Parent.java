@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "t_parent")
@@ -46,5 +47,13 @@ public class Parent {
 
     @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER)
     private List<Child> children;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "parent_roles",
+            joinColumns = @JoinColumn(name = "parent_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles;
 
 }

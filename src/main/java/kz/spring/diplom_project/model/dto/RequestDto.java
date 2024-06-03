@@ -10,5 +10,6 @@ public class RequestDto {
     private LocalDate dateOfRequest;
     private Long parentId;
     private Long childId;
+    private Long daycareId;
     private boolean isApproved;
 }

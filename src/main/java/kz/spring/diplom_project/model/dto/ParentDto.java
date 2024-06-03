@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -26,4 +27,5 @@ public class ParentDto {
     private String gender;
     private String phoneNumber;
     private List<Child> children;
+    private Set<RoleDto> roles;
 }
