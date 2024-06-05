@@ -46,7 +46,7 @@ public class ChildRestController {
     public ResponseEntity<ChildDto> updateChild(
             @RequestBody ChildDto childDto
     ) {
-        return new ResponseEntity<>(childMapper.toDto(childService.updateChild(childMapper.toModel(childDto))), HttpStatus.CREATED);
+        return new ResponseEntity<>(childMapper.toDto(childService.updateChild(childMapper.toModel(childDto))), HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")

@@ -45,7 +45,7 @@ public class AddressRestController {
     public ResponseEntity<AddressDto> updateAddress(
             @RequestBody AddressDto addressDto
     ) {
-        return new ResponseEntity<>(addressMapper.toDto(addressService.updateAddress(addressMapper.toModel(addressDto))), HttpStatus.CREATED);
+        return new ResponseEntity<>(addressMapper.toDto(addressService.updateAddress(addressMapper.toModel(addressDto))), HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")

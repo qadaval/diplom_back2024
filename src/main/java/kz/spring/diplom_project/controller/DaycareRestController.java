@@ -45,7 +45,7 @@ public class DaycareRestController {
     public ResponseEntity<DaycareDto> updateDaycare(
             @RequestBody DaycareDto daycareDto
     ) {
-        return new ResponseEntity<>(daycareMapper.toDto(daycareService.updateDaycare(daycareMapper.toModel(daycareDto))), HttpStatus.CREATED);
+        return new ResponseEntity<>(daycareMapper.toDto(daycareService.updateDaycare(daycareMapper.toModel(daycareDto))), HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")

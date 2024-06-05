@@ -31,4 +31,11 @@ public class RequestController {
     ) {
         return new ResponseEntity<>(requestMapper.toDto(requestService.addRequest(requestMapper.toModel(requestDto))), HttpStatus.CREATED);
     }
+
+    @PutMapping("/update")
+    public ResponseEntity<RequestDto> updateRequest(
+            @RequestBody RequestDto requestDto
+    ) {
+        return new ResponseEntity<>(requestMapper.toDto(requestService.updateRequest(requestMapper.toModel(requestDto))), HttpStatus.OK);
+    }
 }
