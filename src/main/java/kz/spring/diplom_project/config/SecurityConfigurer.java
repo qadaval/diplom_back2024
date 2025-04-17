@@ -36,7 +36,8 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
-                .authorizeRequests().antMatchers("/login", "/register", "/city/all").permitAll()
+                .authorizeRequests().antMatchers("/login", "/register", "/city/all", "/swagger-ui/**",
+                        "/v3/api-docs/**").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and().sessionManagement()

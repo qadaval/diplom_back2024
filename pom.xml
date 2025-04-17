@@ -87,6 +87,13 @@
             <version>1.5.5.Final</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.7.0</version> <!-- или 1.6.15 -->
+        </dependency>
+
+
     </dependencies>
 
 
